@@ -48,7 +48,6 @@
 
     <scm>
         <developerConnection>scm:https://github.com/josephcuellar2662/Pet-Clinic.git</developerConnection>
-      <tag>pet-clinic-0.0.1</tag>
   </scm>
 
 </project>
