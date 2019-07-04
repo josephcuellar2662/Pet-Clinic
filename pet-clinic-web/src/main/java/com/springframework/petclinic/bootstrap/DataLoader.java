@@ -4,19 +4,17 @@ import com.springframework.petclinic.model.Owner;
 import com.springframework.petclinic.model.Vet;
 import com.springframework.petclinic.services.OwnerService;
 import com.springframework.petclinic.services.VetService;
-import com.springframework.petclinic.services.map.OwnserServiceMap;
-import com.springframework.petclinic.services.map.VetServiceMap;
 import org.springframework.boot.CommandLineRunner;
 
 
 public class DataLoader implements CommandLineRunner {
 
-    private final OwnerService ownserService;
+    private final OwnerService ownerService;
     private final VetService vetService;
 
-    public DataLoader() {
-        this.ownserService = new OwnserServiceMap();
-        this.vetService = new VetServiceMap();
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override
@@ -27,14 +25,14 @@ public class DataLoader implements CommandLineRunner {
         owner1.setFirstName("Michael");
         owner1.setLastName("Phelps");
 
-        ownserService.save(owner1);
+        ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         owner1.setId(2L);
         owner1.setFirstName("Fiona");
         owner1.setLastName("Oger");
 
-        ownserService.save(owner2);
+        ownerService.save(owner2);
 
         System.out.println("Loaded owners... ");
 
