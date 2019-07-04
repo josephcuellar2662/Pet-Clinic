@@ -5,8 +5,9 @@ import com.springframework.petclinic.model.Vet;
 import com.springframework.petclinic.services.OwnerService;
 import com.springframework.petclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
-
+@Component
 public class DataLoader implements CommandLineRunner {
 
     private final OwnerService ownerService;
@@ -28,9 +29,9 @@ public class DataLoader implements CommandLineRunner {
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
-        owner1.setId(2L);
-        owner1.setFirstName("Fiona");
-        owner1.setLastName("Oger");
+        owner2.setId(2L);
+        owner2.setFirstName("Fiona");
+        owner2.setLastName("Oger");
 
         ownerService.save(owner2);
 
