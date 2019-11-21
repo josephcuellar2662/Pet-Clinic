@@ -37,8 +37,8 @@ public class VetSDJpaService implements VetService {
     }
 
     @Override
-    public void delete(Vet object) {
-        vetRepository.delete(object);
+    public void delete(Vet vet) {
+        vetRepository.delete(vet);
     }
 
     @Override
